@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import { NavLink, useNavigate } from 'react-router-dom'
 import { useAuth } from '../../context/AuthContext.jsx'
-import AgentforceChat from './AgentforceChat.jsx'
 
 const navItems = [
   { path: '/member/dashboard', label: 'Dashboard', icon: '⊞' },
@@ -26,8 +25,6 @@ function MemberSidebar() {
   }
 
   return (
-    <>
-    <AgentforceChat />
     <aside className={`bg-gray-900 text-white flex flex-col transition-all duration-300 ${collapsed ? 'w-16' : 'w-64'} min-h-screen`}>
       {/* Header */}
       <div className="p-4 border-b border-gray-700 flex items-center justify-between">
@@ -92,7 +89,6 @@ function MemberSidebar() {
         </button>
       </div>
     </aside>
-    </>
   )
 }
 

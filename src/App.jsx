@@ -1,4 +1,6 @@
 import { Routes, Route, Navigate } from 'react-router-dom'
+import { useAuth } from './context/AuthContext.jsx'
+import AgentforceChat from './components/member/AgentforceChat.jsx'
 import Home from './pages/Home.jsx'
 import Login from './pages/Login.jsx'
 import Register from './pages/Register.jsx'
@@ -24,7 +26,11 @@ import ProviderClaims from './pages/provider/ProviderClaims.jsx'
 import Payments from './pages/provider/Payments.jsx'
 
 function App() {
+  const { isAuthenticated, currentUser } = useAuth()
+
   return (
+    <>
+    {isAuthenticated && currentUser?.type === 'member' && <AgentforceChat />}
     <Routes>
       {/* Public routes */}
       <Route path="/" element={<Home />} />
@@ -81,6 +87,7 @@ function App() {
       {/* Fallback */}
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
+    </>
   )
 }
 
