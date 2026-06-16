@@ -25,7 +25,7 @@ function Claims() {
             <table className="w-full text-sm">
               <thead className="bg-gray-50 border-b border-gray-100">
                 <tr>
-                  {['Claim ID', 'Date', 'Provider', 'Type', 'Billed', 'Allowed', 'Plan Paid', 'Your Cost'].map((h) => (
+                  {['Claim ID', 'Date', 'Provider', 'Type', 'Billed'].map((h) => (
                     <th key={h} className="text-left py-3 px-4 text-xs text-gray-500 font-semibold uppercase tracking-wide whitespace-nowrap">
                       {h}
                     </th>
@@ -40,14 +40,11 @@ function Claims() {
                     <td className="py-3 px-4 text-gray-800 max-w-xs truncate">{c.provider}</td>
                     <td className="py-3 px-4 text-gray-600 whitespace-nowrap">{c.type}</td>
                     <td className="py-3 px-4 text-gray-800 font-medium whitespace-nowrap">${c.billed.toFixed(2)}</td>
-                    <td className="py-3 px-4 text-gray-700 whitespace-nowrap">${c.allowed.toFixed(2)}</td>
-                    <td className="py-3 px-4 text-green-700 font-semibold whitespace-nowrap">${c.paid.toFixed(2)}</td>
-                    <td className="py-3 px-4 text-blue-700 font-semibold whitespace-nowrap">${c.memberResponsibility.toFixed(2)}</td>
                   </tr>
                 ))}
                 {claims.length === 0 && (
                   <tr>
-                    <td colSpan={8} className="py-12 text-center text-gray-400 text-sm">
+                    <td colSpan={5} className="py-12 text-center text-gray-400 text-sm">
                       No claims found.
                     </td>
                   </tr>
