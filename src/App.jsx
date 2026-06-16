@@ -51,9 +51,9 @@ function App() {
       <Route path="/member/eob" element={
         <ProtectedRoute requiredType="member"><EOB /></ProtectedRoute>
       } />
-      <Route path="/member/benefits" element={
+      {/* <Route path="/member/benefits" element={
         <ProtectedRoute requiredType="member"><Benefits /></ProtectedRoute>
-      } />
+      } /> */}
       <Route path="/member/pharmacy" element={
         <ProtectedRoute requiredType="member"><Pharmacy /></ProtectedRoute>
       } />
@@ -63,9 +63,9 @@ function App() {
       <Route path="/member/providers" element={
         <ProtectedRoute requiredType="member"><Providers /></ProtectedRoute>
       } />
-      <Route path="/member/out-of-pocket" element={
+      {/* <Route path="/member/out-of-pocket" element={
         <ProtectedRoute requiredType="member"><OutOfPocket /></ProtectedRoute>
-      } />
+      } /> */}
 
       {/* Provider protected routes */}
       <Route path="/provider/dashboard" element={

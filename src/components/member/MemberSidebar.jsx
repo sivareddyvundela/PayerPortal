@@ -7,11 +7,11 @@ const navItems = [
   { path: '/member/profile', label: 'My Profile', icon: '👤' },
   { path: '/member/claims', label: 'Claims', icon: '📋' },
   { path: '/member/eob', label: 'Explanation of Benefits', icon: '📄' },
-  { path: '/member/benefits', label: 'Benefits & Coverage', icon: '🛡️' },
+  // { path: '/member/benefits', label: 'Benefits & Coverage', icon: '🛡️' },
   { path: '/member/pharmacy', label: 'Pharmacy', icon: '💊' },
   { path: '/member/referrals', label: 'Referrals', icon: '📝' },
   { path: '/member/providers', label: 'My Providers', icon: '🏥' },
-  { path: '/member/out-of-pocket', label: 'Out of Pocket', icon: '💳' },
+  // { path: '/member/out-of-pocket', label: 'Out of Pocket', icon: '💳' },
 ]
 
 function MemberSidebar() {

@@ -144,10 +144,10 @@ function MemberDashboard() {
             <h3 className="font-semibold text-gray-800 mb-4">Quick Access</h3>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
               {[
-                { label: 'View Benefits', to: '/member/benefits', icon: '🛡️', color: 'bg-blue-50 hover:bg-blue-100' },
+                // { label: 'View Benefits', to: '/member/benefits', icon: '🛡️', color: 'bg-blue-50 hover:bg-blue-100' },
                 { label: 'My Pharmacy', to: '/member/pharmacy', icon: '💊', color: 'bg-teal-50 hover:bg-teal-100' },
                 { label: 'Find a Provider', to: '/member/providers', icon: '🏥', color: 'bg-indigo-50 hover:bg-indigo-100' },
-                { label: 'Out-of-Pocket', to: '/member/out-of-pocket', icon: '💳', color: 'bg-purple-50 hover:bg-purple-100' },
+                // { label: 'Out-of-Pocket', to: '/member/out-of-pocket', icon: '💳', color: 'bg-purple-50 hover:bg-purple-100' },
               ].map((ql) => (
                 <Link
                   key={ql.to}
