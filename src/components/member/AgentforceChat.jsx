@@ -4,7 +4,11 @@ let sfInitialized = false
 
 function AgentforceChat() {
   useEffect(() => {
+    // Guard against React StrictMode double-invoke and re-renders
     if (sfInitialized) return
+    // Also skip if the script tag is already in the DOM
+    if (document.getElementById('agentforce-bootstrap')) return
+
     sfInitialized = true
 
     window.initEmbeddedMessaging = function () {
@@ -37,26 +41,6 @@ function AgentforceChat() {
       sfInitialized = false
     }
     document.body.appendChild(script)
-
-    return () => {
-      // Remove bootstrap script
-      const existingScript = document.getElementById('agentforce-bootstrap')
-      if (existingScript) existingScript.remove()
-
-      // Remove the chat button web component Salesforce injects
-      const chatButton = document.querySelector('embeddedservice-chat-button')
-      if (chatButton) chatButton.remove()
-
-      // Remove any Salesforce sidebar/modal the widget adds
-      document.querySelectorAll(
-        '.embeddedServiceSidebar, .embeddedServiceHelpButton, [id^="esw"]'
-      ).forEach(el => el.remove())
-
-      // Clean up globals so it can reinitialize on next login
-      delete window.initEmbeddedMessaging
-      delete window.embeddedservice_bootstrap
-      sfInitialized = false
-    }
   }, [])
 
   return null
