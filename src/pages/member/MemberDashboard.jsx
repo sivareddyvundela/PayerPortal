@@ -91,6 +91,8 @@ function MemberDashboard() {
                   <span>${stats.deductibleMax.toLocaleString()} max</span>
                 </div>
               </div>
+              {/* Out-of-Pocket Maximum hidden for demo */}
+              {false && (
               <div className="card">
                 <div className="flex items-center justify-between mb-3">
                   <h3 className="font-semibold text-gray-800">Out-of-Pocket Maximum</h3>
@@ -102,6 +104,7 @@ function MemberDashboard() {
                   <span>${stats.oopMax.toLocaleString()} max</span>
                 </div>
               </div>
+              )}
             </div>
           )}
 
